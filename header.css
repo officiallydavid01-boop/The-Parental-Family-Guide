@@ -1,0 +1,540 @@
+/* =========================================================
+   KING PANELS
+   THE PRACTICAL FAMILY GUIDE
+   HEADER & NAVIGATION
+========================================================= */
+
+
+/* =========================================================
+   SITE HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(8, 9, 12, 0.94);
+
+    border-bottom: 1px solid var(--kp-border);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
+
+    transition:
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   HEADER CONTAINER
+========================================================= */
+
+.header-container {
+    width: min(100% - 2rem, var(--container-width));
+
+    min-height: 78px;
+
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.8rem;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   KP EMBLEM
+========================================================= */
+
+.brand-emblem {
+    position: relative;
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(241, 242, 244, 0.75);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 25%,
+            #ffffff 0%,
+            var(--kp-silver) 30%,
+            var(--kp-dark-silver) 68%,
+            #464a52 100%
+        );
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.75),
+        0 5px 18px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   EMBLEM INNER RING
+========================================================= */
+
+.brand-emblem::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border: 1px solid rgba(8, 9, 12, 0.45);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   KP LETTERS
+========================================================= */
+
+.emblem-kp {
+    position: relative;
+    z-index: 1;
+
+    color: var(--kp-black);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    letter-spacing: -0.08em;
+}
+
+
+/* =========================================================
+   BRAND NAME
+========================================================= */
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.1rem;
+}
+
+
+/* =========================================================
+   BRAND TITLE
+========================================================= */
+
+.brand-title {
+    color: var(--kp-white);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.18em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BRAND SUBTITLE
+========================================================= */
+
+.brand-subtitle {
+    color: var(--kp-dark-silver);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.55rem;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+
+    gap: 1.6rem;
+
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.main-navigation > a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    color: var(--kp-muted);
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--transition-fast);
+}
+
+
+.main-navigation > a:hover {
+    color: var(--kp-white);
+}
+
+
+/* =========================================================
+   NAV UNDERLINE
+========================================================= */
+
+.main-navigation > a:not(.nav-buy-button)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 100%;
+    height: 1px;
+
+    background: var(--kp-light-silver);
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform var(--transition-normal);
+}
+
+
+.main-navigation > a:not(.nav-buy-button):hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   NAV BUY BUTTON
+========================================================= */
+
+.nav-buy-button {
+    min-height: 42px;
+
+    padding: 0.7rem 1.15rem;
+
+    border-radius: 999px;
+
+    background: var(--kp-light-silver);
+
+    color: var(--kp-black) !important;
+
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+.nav-buy-button:hover {
+    background: var(--kp-white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    background: transparent;
+
+    flex-shrink: 0;
+}
+
+
+.menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    background: var(--kp-white);
+
+    transition:
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+
+/* =========================================================
+   ACTIVE HAMBURGER
+========================================================= */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .main-navigation {
+        gap: 1rem;
+    }
+
+    .main-navigation > a {
+        font-size: 0.7rem;
+    }
+
+    .nav-buy-button {
+        padding-inline: 1rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .header-container {
+        min-height: 70px;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .main-navigation {
+        position: fixed;
+
+        top: 70px;
+        left: 1rem;
+        right: 1rem;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        margin: 0;
+
+        padding: 0.7rem;
+
+        border: 1px solid var(--kp-border-light);
+
+        border-radius: var(--radius-medium);
+
+        background:
+            rgba(13, 15, 20, 0.98);
+
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.55);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-12px);
+
+        pointer-events: none;
+
+        transition:
+            opacity var(--transition-normal),
+            visibility var(--transition-normal),
+            transform var(--transition-normal);
+    }
+
+
+    /* Open mobile menu */
+
+    .main-navigation.active {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+
+        pointer-events: auto;
+    }
+
+
+    /* Mobile links */
+
+    .main-navigation > a {
+        display: flex;
+
+        width: 100%;
+
+        min-height: 50px;
+
+        padding: 0.8rem 0.9rem;
+
+        align-items: center;
+
+        color: var(--kp-muted);
+
+        border-bottom: 1px solid var(--kp-border);
+    }
+
+
+    .main-navigation > a:hover {
+        color: var(--kp-white);
+    }
+
+
+    .main-navigation > a:not(.nav-buy-button)::after {
+        display: none;
+    }
+
+
+    /* Mobile CTA */
+
+    .main-navigation .nav-buy-button {
+        justify-content: center;
+
+        margin-top: 0.7rem;
+
+        border: 0;
+
+        min-height: 48px;
+    }
+
+
+    /* Show hamburger */
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .header-container {
+        width: min(100% - 1.25rem, var(--container-width));
+
+        min-height: 66px;
+    }
+
+
+    .brand-emblem {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    .brand-title {
+        font-size: 0.7rem;
+
+        letter-spacing: 0.15em;
+    }
+
+
+    .brand-subtitle {
+        font-size: 0.48rem;
+
+        letter-spacing: 0.18em;
+    }
+
+
+    .main-navigation {
+        top: 66px;
+
+        left: 0.7rem;
+        right: 0.7rem;
+    }
+}

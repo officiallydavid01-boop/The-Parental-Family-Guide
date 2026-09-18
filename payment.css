@@ -1,0 +1,511 @@
+/* =========================================================
+   KING PANELS
+   THE PRACTICAL FAMILY GUIDE
+   PAYMENT & PURCHASE UI
+========================================================= */
+
+
+/* =========================================================
+   PAYMENT AREA
+========================================================= */
+
+.payment-area {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   PAYMENT CARD
+========================================================= */
+
+.payment-card {
+    padding: 2rem;
+
+    border: 1px solid var(--kp-border-light);
+    border-radius: var(--radius-medium);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    box-shadow: var(--kp-shadow-small);
+}
+
+
+/* =========================================================
+   PAYMENT HEADER
+========================================================= */
+
+.payment-header {
+    margin-bottom: 1.5rem;
+}
+
+.payment-header h3 {
+    margin-bottom: 0.5rem;
+}
+
+.payment-header p {
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.payment-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.payment-price strong {
+    color: var(--kp-white);
+
+    font-family: "Playfair Display", serif;
+    font-size: 2.4rem;
+}
+
+.payment-price span {
+    color: var(--kp-dark-silver);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   BANK DETAILS
+========================================================= */
+
+.bank-details {
+    display: grid;
+    gap: 0.7rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.bank-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid var(--kp-border);
+    border-radius: var(--radius-small);
+
+    background: rgba(8, 9, 12, 0.4);
+}
+
+.bank-detail-label {
+    color: var(--kp-dark-silver);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.bank-detail-value {
+    color: var(--kp-white);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    text-align: right;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   PAYMENT NOTICE
+========================================================= */
+
+.payment-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+
+    border: 1px solid var(--kp-border);
+    border-radius: var(--radius-small);
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.payment-notice-icon {
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid var(--kp-border-light);
+    border-radius: 50%;
+
+    color: var(--kp-silver);
+
+    font-size: 0.7rem;
+}
+
+.payment-notice p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PROOF OF PAYMENT
+========================================================= */
+
+.payment-proof {
+    margin-top: 1rem;
+
+    text-align: center;
+}
+
+.payment-proof p {
+    margin-bottom: 0.8rem;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   PAYMENT DIVIDER
+========================================================= */
+
+.payment-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin: 1.5rem 0;
+}
+
+.payment-divider::before,
+.payment-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: var(--kp-border);
+}
+
+.payment-divider span {
+    color: var(--kp-dark-silver);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   PAYMENT MODAL
+========================================================= */
+
+.payment-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity var(--transition-normal),
+        visibility var(--transition-normal);
+}
+
+.payment-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.payment-modal-content {
+    position: relative;
+
+    width: min(100%, 600px);
+    max-height: calc(100vh - 2rem);
+
+    padding: 2rem;
+
+    overflow-y: auto;
+
+    border: 1px solid var(--kp-border-light);
+    border-radius: var(--radius-large);
+
+    background: var(--kp-deep);
+
+    box-shadow: var(--kp-shadow);
+
+    transform: translateY(15px) scale(0.98);
+
+    transition:
+        transform var(--transition-normal);
+}
+
+.payment-modal.active .payment-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   MODAL CLOSE BUTTON
+========================================================= */
+
+.payment-modal-close {
+    position: absolute;
+
+    top: 1rem;
+    right: 1rem;
+
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid var(--kp-border);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: var(--kp-white);
+
+    font-size: 1.1rem;
+
+    transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.payment-modal-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: var(--kp-border-light);
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.payment-modal-title {
+    padding-right: 3rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.payment-modal-subtitle {
+    margin-bottom: 1.8rem;
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   PAYMENT STEPS
+========================================================= */
+
+.payment-steps {
+    display: grid;
+    gap: 0.8rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.payment-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.payment-step-number {
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid var(--kp-border-light);
+    border-radius: 50%;
+
+    color: var(--kp-silver);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.payment-step p {
+    padding-top: 0.2rem;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   WHATSAPP / PROOF BUTTON
+========================================================= */
+
+.payment-whatsapp {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .payment-card {
+        padding: 1.4rem;
+    }
+
+    .payment-modal {
+        padding: 0.75rem;
+    }
+
+    .payment-modal-content {
+        padding: 1.4rem;
+
+        border-radius: var(--radius-medium);
+    }
+
+    .payment-price strong {
+        font-size: 2rem;
+    }
+
+    .bank-detail {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .bank-detail-value {
+        text-align: left;
+    }
+}
+/* =========================================================
+   COPY BUTTON
+========================================================= */
+
+.copy-button {
+    flex-shrink: 0;
+
+    padding: 0.45rem 0.7rem;
+
+    border: 1px solid var(--kp-border-light);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: var(--kp-silver);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.copy-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--kp-white);
+
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
+.copy-button.copied {
+    color: var(--kp-black);
+
+    background: var(--kp-light-silver);
+
+    border-color: var(--kp-light-silver);
+}
+/* =========================================================
+   WHATSAPP PROOF BUTTON
+========================================================= */
+
+.payment-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    margin-top: 1rem;
+    padding: 0.95rem 1.25rem;
+
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    border-radius: 12px;
+
+    background: #25D366;
+    color: #ffffff;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.12);
+
+    transition:
+        transform var(--transition-fast),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.payment-whatsapp:hover {
+    background: #20bd5a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(37, 211, 102, 0.20);
+}
+
+.payment-whatsapp:active {
+    transform: translateY(0);
+}
