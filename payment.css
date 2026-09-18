@@ -509,3 +509,38 @@
 .payment-whatsapp:active {
     transform: translateY(0);
 }
+/* =========================================================
+   WHATSAPP NUMBER BOX
+========================================================= */
+
+.whatsapp-number-box {
+    margin-top: 1rem;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--kp-border);
+    border-radius: var(--radius-small);
+    background: rgba(255, 255, 255, 0.025);
+    text-align: center;
+}
+
+.whatsapp-number-label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: var(--kp-dark-silver);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.whatsapp-number {
+    color: var(--kp-white);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.whatsapp-number-box p {
+    margin-top: 0.45rem;
+    color: var(--kp-dark-silver);
+    font-size: 0.68rem;
+    line-height: 1.6;
+}
